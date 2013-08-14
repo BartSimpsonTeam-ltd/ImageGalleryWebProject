@@ -20,23 +20,26 @@ namespace ImageGalery.Services.Controllers
         {
             db.Configuration.ProxyCreationEnabled = false;
         }
-        // GET api/Comments
-        public IEnumerable<Comment> GetComments()
-        {
-            var comments = db.Comments.Include(c => c.Image).Include(c => c.User);
-            return comments.AsEnumerable();
-        }
+       
 
         // GET api/Comments/5
-        public Comment GetComment(int id)
+        public HttpResponseMessage GetComment(int id)
         {
-            Comment comment = db.Comments.Find(id);
-            if (comment == null)
+            var image = db.Images.FirstOrDefault(x => x.ImageId == id);
+
+            var comments = db.Comments.Where(x => x.ImageId == id).Select(y=> new {
+                CommentId=y.CommentId,
+                Content=y.Content,
+                Username=y.User.Username,
+                ImageId = y.ImageId
+            }).ToList();
+
+            if (image == null)
             {
                 throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.NotFound));
             }
 
-            return comment;
+            return Request.CreateResponse(HttpStatusCode.OK, comments);
         }
 
         // PUT api/Comments/5
@@ -75,7 +78,7 @@ namespace ImageGalery.Services.Controllers
             {
                 db.Comments.Add(comment);
                 db.SaveChanges();
-
+               
                 HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.Created, comment);
                 response.Headers.Location = new Uri(Url.Link("DefaultApi", new { id = comment.CommentId }));
                 return response;
