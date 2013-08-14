@@ -28,3 +28,13 @@ D:\TeamBartSimpson\ImageGalleryWebProject\ImageGallery\ImageGallery.DataLayer\bi
 D:\TeamBartSimpson\ImageGalleryWebProject\ImageGallery\ImageGallery.DataLayer\obj\Debug\ImageGallery.DataLayer.csprojResolveAssemblyReference.cache
 D:\TeamBartSimpson\ImageGalleryWebProject\ImageGallery\ImageGallery.DataLayer\obj\Debug\ImageGallery.DataLayer.dll
 D:\TeamBartSimpson\ImageGalleryWebProject\ImageGallery\ImageGallery.DataLayer\obj\Debug\ImageGallery.DataLayer.pdb
+C:\Users\krstan4o\Desktop\TeamProjectBarts\ImageGalleryWebProject\ImageGallery\ImageGallery.DataLayer\bin\Debug\ImageGallery.DataLayer.dll.config
+C:\Users\krstan4o\Desktop\TeamProjectBarts\ImageGalleryWebProject\ImageGallery\ImageGallery.DataLayer\bin\Debug\ImageGallery.DataLayer.dll
+C:\Users\krstan4o\Desktop\TeamProjectBarts\ImageGalleryWebProject\ImageGallery\ImageGallery.DataLayer\bin\Debug\ImageGallery.DataLayer.pdb
+C:\Users\krstan4o\Desktop\TeamProjectBarts\ImageGalleryWebProject\ImageGallery\ImageGallery.DataLayer\bin\Debug\EntityFramework.dll
+C:\Users\krstan4o\Desktop\TeamProjectBarts\ImageGalleryWebProject\ImageGallery\ImageGallery.DataLayer\bin\Debug\ImageGallery.Models.dll
+C:\Users\krstan4o\Desktop\TeamProjectBarts\ImageGalleryWebProject\ImageGallery\ImageGallery.DataLayer\bin\Debug\ImageGallery.Models.pdb
+C:\Users\krstan4o\Desktop\TeamProjectBarts\ImageGalleryWebProject\ImageGallery\ImageGallery.DataLayer\bin\Debug\EntityFramework.xml
+C:\Users\krstan4o\Desktop\TeamProjectBarts\ImageGalleryWebProject\ImageGallery\ImageGallery.DataLayer\obj\Debug\ImageGallery.DataLayer.csprojResolveAssemblyReference.cache
+C:\Users\krstan4o\Desktop\TeamProjectBarts\ImageGalleryWebProject\ImageGallery\ImageGallery.DataLayer\obj\Debug\ImageGallery.DataLayer.dll
+C:\Users\krstan4o\Desktop\TeamProjectBarts\ImageGalleryWebProject\ImageGallery\ImageGallery.DataLayer\obj\Debug\ImageGallery.DataLayer.pdb
