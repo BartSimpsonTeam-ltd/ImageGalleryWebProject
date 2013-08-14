@@ -16,7 +16,10 @@ namespace ImageGalery.Services.Controllers
     public class CommentsController : ApiController
     {
         private ImageGalleryContext db = new ImageGalleryContext();
-
+        public CommentsController()
+        {
+            db.Configuration.ProxyCreationEnabled = false;
+        }
         // GET api/Comments
         public IEnumerable<Comment> GetComments()
         {

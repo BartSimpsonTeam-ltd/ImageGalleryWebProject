@@ -9,3 +9,9 @@ C:\Users\krstan4o\Desktop\TeamBartSimpson\ImageGalleryWebProject\ImageGallery\Im
 C:\Users\krstan4o\Desktop\TeamBartSimpson\ImageGalleryWebProject\ImageGallery\ImageGallery.Models\obj\Debug\ImageGallery.Models.csprojResolveAssemblyReference.cache
 C:\Users\krstan4o\Desktop\TeamBartSimpson\ImageGalleryWebProject\ImageGallery\ImageGallery.Models\obj\Debug\ImageGallery.Models.dll
 C:\Users\krstan4o\Desktop\TeamBartSimpson\ImageGalleryWebProject\ImageGallery\ImageGallery.Models\obj\Debug\ImageGallery.Models.pdb
+C:\Users\krstan4o\Desktop\TeamProjectBarts\ImageGalleryWebProject\ImageGallery\ImageGallery.Models\bin\Debug\ImageGallery.Models.dll.config
+C:\Users\krstan4o\Desktop\TeamProjectBarts\ImageGalleryWebProject\ImageGallery\ImageGallery.Models\bin\Debug\ImageGallery.Models.dll
+C:\Users\krstan4o\Desktop\TeamProjectBarts\ImageGalleryWebProject\ImageGallery\ImageGallery.Models\bin\Debug\ImageGallery.Models.pdb
+C:\Users\krstan4o\Desktop\TeamProjectBarts\ImageGalleryWebProject\ImageGallery\ImageGallery.Models\obj\Debug\ImageGallery.Models.csprojResolveAssemblyReference.cache
+C:\Users\krstan4o\Desktop\TeamProjectBarts\ImageGalleryWebProject\ImageGallery\ImageGallery.Models\obj\Debug\ImageGallery.Models.dll
+C:\Users\krstan4o\Desktop\TeamProjectBarts\ImageGalleryWebProject\ImageGallery\ImageGallery.Models\obj\Debug\ImageGallery.Models.pdb

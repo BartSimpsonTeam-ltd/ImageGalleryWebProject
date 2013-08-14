@@ -17,6 +17,11 @@ namespace ImageGalery.Services.Controllers
     {
         private ImageGalleryContext db = new ImageGalleryContext();
 
+        public ImagesController()
+        {
+            db.Configuration.ProxyCreationEnabled = false;
+        }
+
         // GET api/Images
         public IEnumerable<Image> GetImages()
         {
