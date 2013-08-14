@@ -1,0 +1,5 @@
+C:\Users\SaB\Documents\GitHub\ImageGalleryWebProject\ImageGallery\ImageGallery.Client\bin\Debug\ImageGallery.Client.exe.config
+C:\Users\SaB\Documents\GitHub\ImageGalleryWebProject\ImageGallery\ImageGallery.Client\bin\Debug\ImageGallery.Client.exe
+C:\Users\SaB\Documents\GitHub\ImageGalleryWebProject\ImageGallery\ImageGallery.Client\bin\Debug\ImageGallery.Client.pdb
+C:\Users\SaB\Documents\GitHub\ImageGalleryWebProject\ImageGallery\ImageGallery.Client\obj\Debug\ImageGallery.Client.exe
+C:\Users\SaB\Documents\GitHub\ImageGalleryWebProject\ImageGallery\ImageGallery.Client\obj\Debug\ImageGallery.Client.pdb
