@@ -9,3 +9,9 @@ C:\Users\krstan4o\Desktop\TeamBartSimpson\ImageGalleryWebProject\ImageGallery\Im
 C:\Users\krstan4o\Desktop\TeamBartSimpson\ImageGalleryWebProject\ImageGallery\ImageGallery.Client\obj\Debug\ImageGallery.Client.csprojResolveAssemblyReference.cache
 C:\Users\krstan4o\Desktop\TeamBartSimpson\ImageGalleryWebProject\ImageGallery\ImageGallery.Client\obj\Debug\ImageGallery.Client.exe
 C:\Users\krstan4o\Desktop\TeamBartSimpson\ImageGalleryWebProject\ImageGallery\ImageGallery.Client\obj\Debug\ImageGallery.Client.pdb
+D:\TeamBartSimpson\ImageGalleryWebProject\ImageGallery\ImageGallery.Client\bin\Debug\ImageGallery.Client.exe.config
+D:\TeamBartSimpson\ImageGalleryWebProject\ImageGallery\ImageGallery.Client\bin\Debug\ImageGallery.Client.exe
+D:\TeamBartSimpson\ImageGalleryWebProject\ImageGallery\ImageGallery.Client\bin\Debug\ImageGallery.Client.pdb
+D:\TeamBartSimpson\ImageGalleryWebProject\ImageGallery\ImageGallery.Client\obj\Debug\ImageGallery.Client.csprojResolveAssemblyReference.cache
+D:\TeamBartSimpson\ImageGalleryWebProject\ImageGallery\ImageGallery.Client\obj\Debug\ImageGallery.Client.exe
+D:\TeamBartSimpson\ImageGalleryWebProject\ImageGallery\ImageGallery.Client\obj\Debug\ImageGallery.Client.pdb

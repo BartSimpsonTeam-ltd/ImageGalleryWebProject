@@ -160,6 +160,8 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\AlbumsController.cs" />
+    <Compile Include="Controllers\CommentsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -282,9 +284,20 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Persisters\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ImageGallery.DataLayer\ImageGallery.DataLayer.csproj">
+      <Project>{c2c5b7d7-9868-426a-95f5-f667e324e5fb}</Project>
+      <Name>ImageGallery.DataLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ImageGallery.Models\ImageGallery.Models.csproj">
+      <Project>{a422b6b6-6500-4085-a5c6-02f6076c7a5c}</Project>
+      <Name>ImageGallery.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

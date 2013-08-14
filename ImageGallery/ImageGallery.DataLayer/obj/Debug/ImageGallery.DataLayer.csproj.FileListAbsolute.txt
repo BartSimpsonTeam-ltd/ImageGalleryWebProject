@@ -18,3 +18,13 @@ C:\Users\krstan4o\Desktop\TeamBartSimpson\ImageGalleryWebProject\ImageGallery\Im
 C:\Users\krstan4o\Desktop\TeamBartSimpson\ImageGalleryWebProject\ImageGallery\ImageGallery.DataLayer\obj\Debug\ImageGallery.DataLayer.csprojResolveAssemblyReference.cache
 C:\Users\krstan4o\Desktop\TeamBartSimpson\ImageGalleryWebProject\ImageGallery\ImageGallery.DataLayer\obj\Debug\ImageGallery.DataLayer.dll
 C:\Users\krstan4o\Desktop\TeamBartSimpson\ImageGalleryWebProject\ImageGallery\ImageGallery.DataLayer\obj\Debug\ImageGallery.DataLayer.pdb
+D:\TeamBartSimpson\ImageGalleryWebProject\ImageGallery\ImageGallery.DataLayer\bin\Debug\ImageGallery.DataLayer.dll.config
+D:\TeamBartSimpson\ImageGalleryWebProject\ImageGallery\ImageGallery.DataLayer\bin\Debug\ImageGallery.DataLayer.dll
+D:\TeamBartSimpson\ImageGalleryWebProject\ImageGallery\ImageGallery.DataLayer\bin\Debug\ImageGallery.DataLayer.pdb
+D:\TeamBartSimpson\ImageGalleryWebProject\ImageGallery\ImageGallery.DataLayer\bin\Debug\EntityFramework.dll
+D:\TeamBartSimpson\ImageGalleryWebProject\ImageGallery\ImageGallery.DataLayer\bin\Debug\ImageGallery.Models.dll
+D:\TeamBartSimpson\ImageGalleryWebProject\ImageGallery\ImageGallery.DataLayer\bin\Debug\ImageGallery.Models.pdb
+D:\TeamBartSimpson\ImageGalleryWebProject\ImageGallery\ImageGallery.DataLayer\bin\Debug\EntityFramework.xml
+D:\TeamBartSimpson\ImageGalleryWebProject\ImageGallery\ImageGallery.DataLayer\obj\Debug\ImageGallery.DataLayer.csprojResolveAssemblyReference.cache
+D:\TeamBartSimpson\ImageGalleryWebProject\ImageGallery\ImageGallery.DataLayer\obj\Debug\ImageGallery.DataLayer.dll
+D:\TeamBartSimpson\ImageGalleryWebProject\ImageGallery\ImageGallery.DataLayer\obj\Debug\ImageGallery.DataLayer.pdb
