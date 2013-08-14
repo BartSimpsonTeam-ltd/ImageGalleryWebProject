@@ -21,22 +21,35 @@ namespace ImageGalery.Services.Controllers
         {
             db.Configuration.ProxyCreationEnabled = false;
         }
-        // GET api/Albums
-        public IEnumerable<Album> GetAlbums()
-        {
-            return db.Albums.AsEnumerable();
-        }
+
+      
 
         // GET api/Albums/5
-        public Album GetAlbum(int id)
+        [HttpGet]
+        [ActionName("Albums")]
+        public HttpResponseMessage GetAlbums(int id)
         {
-            Album album = db.Albums.Find(id);
-            if (album == null)
+            // id = albumId
+            var albumsAndImagesInAlbum = db.Albums.Where(x => x.AlbumId == id).Select(y => new
+            {
+                Images = y.Images.Select(x => new 
+                {
+                    AlbumId = y.AlbumId,
+                    ImageId = x.ImageId,
+                    Title = x.Title,
+                    Url=x.Url,
+                   
+                }),
+                Albums = y.Albums
+
+            }).ToList();
+
+            if (albumsAndImagesInAlbum.Count == 0)
             {
                 throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.NotFound));
             }
-
-            return album;
+            return Request.CreateResponse(HttpStatusCode.OK, albumsAndImagesInAlbum);
+            
         }
 
         // PUT api/Albums/5
