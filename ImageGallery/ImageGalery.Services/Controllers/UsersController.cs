@@ -18,21 +18,44 @@ namespace ImageGalery.Services.Controllers
         private ImageGalleryContext db = new ImageGalleryContext();
 
         // GET api/Users
-        public IEnumerable<User> GetUsers()
+        public HttpResponseMessage GetUsers()
         {
-            return db.Users.AsEnumerable();
+            var data = (from users in db.Users
+                        select new
+                        {
+                            UserId = users.UserId,
+                            Username = users.Username
+                        }).ToList();
+
+            return Request.CreateResponse(HttpStatusCode.OK, data);
         }
 
         // GET api/Users/5
-        public User GetUser(int id)
+        public HttpResponseMessage GetUser(int id)
         {
-            User user = db.Users.Find(id);
-            if (user == null)
+            
+            var galleries = (from albums in db.Albums
+                             where (albums.User.UserId == id /*&& albums.Albums == null*/)
+                             select new
+                             {
+                                 AlbumId = albums.AlbumId,
+                                 Title = albums.Title
+                             }).ToList();
+            var user = db.Users.Find(id);
+
+            if (user != null)
             {
-                throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.NotFound));
+                var data = new
+                            {
+                                UserId = user.UserId,
+                                Username = user.Username,
+                                Galleries = galleries
+                            };
+
+                return Request.CreateResponse(HttpStatusCode.OK, data);
             }
 
-            return user;
+            return Request.CreateResponse(HttpStatusCode.NotFound);
         }
 
         // PUT api/Users/5
