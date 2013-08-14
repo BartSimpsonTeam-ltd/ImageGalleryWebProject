@@ -10,6 +10,7 @@ using System.Web;
 using System.Web.Http;
 using ImageGallery.Models;
 using ImageGallery.DataLayer;
+using System.Text;
 
 namespace ImageGalery.Services.Controllers
 {
@@ -58,35 +59,14 @@ namespace ImageGalery.Services.Controllers
             return Request.CreateResponse(HttpStatusCode.NotFound);
         }
 
-        // PUT api/Users/5
-        public HttpResponseMessage PutUser(int id, User user)
-        {
-            if (ModelState.IsValid && id == user.UserId)
-            {
-                db.Entry(user).State = EntityState.Modified;
-
-                try
-                {
-                    db.SaveChanges();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    return Request.CreateResponse(HttpStatusCode.NotFound);
-                }
-
-                return Request.CreateResponse(HttpStatusCode.OK);
-            }
-            else
-            {
-                return Request.CreateResponse(HttpStatusCode.BadRequest);
-            }
-        }
-
         // POST api/Users
-        public HttpResponseMessage PostUser(User user)
+        [HttpPost]
+        [ActionName("register")]
+        public HttpResponseMessage RegUser(User user)
         {
             if (ModelState.IsValid)
             {
+                user.SessionKey = GenerateSessionKey(13);
                 db.Users.Add(user);
                 db.SaveChanges();
 
@@ -100,33 +80,65 @@ namespace ImageGalery.Services.Controllers
             }
         }
 
-        // DELETE api/Users/5
-        public HttpResponseMessage DeleteUser(int id)
+        [HttpPost]
+        [ActionName("login")]
+        public HttpResponseMessage LogUser(User user)
         {
-            User user = db.Users.Find(id);
-            if (user == null)
+            if (ModelState.IsValid)
             {
+                var userChecked = db.Users.Select(u => u).Where(u => u.AuthCode == user.AuthCode &&
+                    u.Username == user.Username).ToList();
+
+                if (userChecked.Count != 0)
+                {
+                    var newSessionKey = GenerateSessionKey(userChecked[0].UserId);
+
+                    var data = new
+                    {
+                        UserId = userChecked[0].UserId,
+                        Username = user.Username,
+                        SessionKey = newSessionKey
+                    };
+
+                    userChecked[0].SessionKey = newSessionKey;
+                    db.SaveChanges();
+
+                    return Request.CreateResponse(HttpStatusCode.OK, data);
+                }
+
                 return Request.CreateResponse(HttpStatusCode.NotFound);
             }
-
-            db.Users.Remove(user);
-
-            try
+            else
             {
-                db.SaveChanges();
+                return Request.CreateResponse(HttpStatusCode.BadRequest);
             }
-            catch (DbUpdateConcurrencyException)
-            {
-                return Request.CreateResponse(HttpStatusCode.NotFound);
-            }
-
-            return Request.CreateResponse(HttpStatusCode.OK, user);
         }
 
         protected override void Dispose(bool disposing)
         {
             db.Dispose();
             base.Dispose(disposing);
+        }
+
+        private const string SessionKeyChars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+        private const int SessionKeyLen = 50;
+        private static string GenerateSessionKey(int userId)
+        {
+            StringBuilder keyChars = new StringBuilder(50);
+            var rand = new Random();
+            keyChars.Append(userId.ToString());
+            while (keyChars.Length < SessionKeyLen)
+            {
+                int randomCharNum;
+                lock (rand)
+                {
+                    randomCharNum = rand.Next(SessionKeyChars.Length);
+                }
+                char randomKeyChar = SessionKeyChars[randomCharNum];
+                keyChars.Append(randomKeyChar);
+            }
+            string sessionKey = keyChars.ToString();
+            return sessionKey;
         }
     }
 }

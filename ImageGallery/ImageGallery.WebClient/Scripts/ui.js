@@ -28,32 +28,18 @@
 	//		}]);
 	//}
 
-	function buildGalleryUI(nickname) {
+	function buildGalleryUI(user) {
 	    var html = '<span id="user-nickname">' +
-				nickname +
+				localStorage.getItem("nickname") +
 		'</span>' +
 		'<button id="btn-logout">Logout</button><br/>' +
 		'<div id="users-container">' +
 			'<h2>Users</h2>' +
-			'<div id="users">' + buildUsersList([{
-			    username: "ivan",
-			    userId: "1"
-			},
-		{
-		    username: "ivan2",
-		    userId: 2
-		}]) +
+			'<div id="users">' + buildUsersList(user) +
 	    '</div></div>' +
 		'<div id="galleries-container">' +
 			'<h2>Galleries</h2>' +
-			'<div id="galleries">' + buildGalleriesList([{
-			    id: 3,
-                title:"First album"
-			},
-			{
-			    id: 2,
-			    title: "Second album"
-			}]) +
+			'<div id="galleries">' +
             '</div>' +
 		'</div>';
 
@@ -81,9 +67,9 @@
 		for (var i = 0; i < users.length; i++) {
 			//var game = gamesList[i];
 			list +=
-				'<li data-user-id="' + users[i].userId + '">' +
+				'<li data-user-id="' + users[i].UserId + '">' +
 					'<a href="#" class="users">' + //users[i].username +
-						$("<div />").html(users[i].username).text() +
+						$("<div />").html(users[i].Username).text() +
 					'</a>' + 
 				'</li>';
 		}

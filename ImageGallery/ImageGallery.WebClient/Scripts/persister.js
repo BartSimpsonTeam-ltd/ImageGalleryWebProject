@@ -6,8 +6,8 @@ var persisters = (function () {
 	var sessionKey = localStorage.getItem("sessionKey");
 
 	function saveUserData(userData) {
-	    localStorage.setItem("nickname", userData.nickname);
-	    localStorage.setItem("sessionKey", userData.sessionKey);
+	    localStorage.setItem("nickname", userData.Username);
+	    localStorage.setItem("sessionKey", userData.SessionKey);
 	    nickname = userData.nickname;
 	    sessionKey = userData.sessionKey;
 	}
@@ -58,7 +58,6 @@ var persisters = (function () {
 			var url = this.rootUrl + "register";
 			var userData = {
 				username: user.username,
-				nickname: user.nickname,
 				authCode: CryptoJS.SHA1(user.username + user.password).toString()
 			};
 			httpRequester.postJSON(url, userData,
@@ -75,7 +74,11 @@ var persisters = (function () {
 			}, error)
 		},
 		getGalleries: function (userId, success, error) {
-		    var url = this.rootUrl + userId;
+		    var url = this.rootUrl + "getuser/" + userId;
+		    httpRequester.getJSON(url, success, error);
+		},
+		getUsers: function (success, error) {
+		    var url = this.rootUrl;
 		    httpRequester.getJSON(url, success, error);
 		}
 	});

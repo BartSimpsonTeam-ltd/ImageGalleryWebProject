@@ -12,13 +12,13 @@ var controllers = (function () {
 		},
 		loadUI: function (selector) {
 		    //--------------------- start -----------------------
-		    this.loadGalleryUI(content);
-			//if (this.persister.isUserLoggedIn()) {
-			//	this.loadGalleryUI(selector);
-			//}
-			//else {
-			//	this.loadLoginFormUI(selector);
-			//}
+		    //this.loadGalleryUI(selector);
+			if (this.persister.isUserLoggedIn()) {
+				this.loadGalleryUI(selector);
+			}
+			else {
+				this.loadLoginFormUI(selector);
+			}
 			this.attachUIEventHandlers(selector);
 		},
 		loadLoginFormUI: function (selector) {
@@ -26,8 +26,17 @@ var controllers = (function () {
 			$(selector).html(loginFormHtml);
 		},
 		loadGalleryUI: function (selector) {
-			var list = ui.GalleryUI(this.persister.nickname());
-			$(selector).html(list);
+
+		    this.persister.user.getUsers(function (user) {
+		        // wait for data -> array of albums
+		        var list = ui.GalleryUI(user);
+		        $(selector).html(list);
+		    }, function () { alert("error, not found albums") });
+
+
+
+			//var list = ui.GalleryUI(this.persister.nickname());
+			//$(selector).html(list);
 
 			//this.persister.game.open(function (games) {
 			//	var list = ui.openGamesList(games);
@@ -44,8 +53,8 @@ var controllers = (function () {
 		loadGalleriesUI: function (userId, selector) {
 		    //alert(userId);
 		    this.persister.user.getGalleries(userId, function (user) {
-		        alert(user);
-		        console.log(user.Galleries);
+		        //alert(user);
+		        //console.log(user.Galleries);
                 // wait for data -> array of albums
 		        var list = ui.GaleriesUI(user.Galleries);
 		        $(selector).html(list);
@@ -87,13 +96,14 @@ var controllers = (function () {
 				}, function () {
 					wrapper.html("oh no..");
 				});
+
+
 				return false;
 			});
 			wrapper.on("click", "#btn-register", function () {
 			    var user = {
-			        username: $(selector + " #tb-register-username").val(),
-			        nickname: $(selector + " #tb-register-nickname").val(),
-			        password: $(selector + " #tb-register-password").val()
+			        username: $(selector + " #tb-login-username").val(),
+			        password: $(selector + " #tb-login-password").val()
 			    }
 
 			    self.persister.user.register(user, function () {
@@ -104,10 +114,15 @@ var controllers = (function () {
 			    return false;
 			});
 			wrapper.on("click", "#btn-logout", function () {
-			    alert("logout");
-				self.persister.user.logout(function () {
-					self.loadLoginFormUI(selector);
-				});
+			    //alert("logout");
+				//self.persister.user.logout(function () {
+				//	self.loadLoginFormUI(selector);
+			    //});
+			    localStorage.removeItem("nickname");
+			    localStorage.removeItem("sessionKey");
+			    nickname = "";
+			    sessionKey = "";
+			    self.loadLoginFormUI(selector);
 			});
 
 			wrapper.on("click", "#btn-create-game", function () {
