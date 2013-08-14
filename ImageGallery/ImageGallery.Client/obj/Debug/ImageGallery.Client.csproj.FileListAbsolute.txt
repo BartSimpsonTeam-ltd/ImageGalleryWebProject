@@ -21,3 +21,9 @@ C:\Users\krstan4o\Desktop\TeamProjectBarts\ImageGalleryWebProject\ImageGallery\I
 C:\Users\krstan4o\Desktop\TeamProjectBarts\ImageGalleryWebProject\ImageGallery\ImageGallery.Client\obj\Debug\ImageGallery.Client.csprojResolveAssemblyReference.cache
 C:\Users\krstan4o\Desktop\TeamProjectBarts\ImageGalleryWebProject\ImageGallery\ImageGallery.Client\obj\Debug\ImageGallery.Client.exe
 C:\Users\krstan4o\Desktop\TeamProjectBarts\ImageGalleryWebProject\ImageGallery\ImageGallery.Client\obj\Debug\ImageGallery.Client.pdb
+C:\Users\ScorpS\Documents\GitHub\ImageGalleryWebProject\ImageGallery\ImageGallery.Client\bin\Debug\ImageGallery.Client.exe.config
+C:\Users\ScorpS\Documents\GitHub\ImageGalleryWebProject\ImageGallery\ImageGallery.Client\bin\Debug\ImageGallery.Client.exe
+C:\Users\ScorpS\Documents\GitHub\ImageGalleryWebProject\ImageGallery\ImageGallery.Client\bin\Debug\ImageGallery.Client.pdb
+C:\Users\ScorpS\Documents\GitHub\ImageGalleryWebProject\ImageGallery\ImageGallery.Client\obj\Debug\ImageGallery.Client.csprojResolveAssemblyReference.cache
+C:\Users\ScorpS\Documents\GitHub\ImageGalleryWebProject\ImageGallery\ImageGallery.Client\obj\Debug\ImageGallery.Client.exe
+C:\Users\ScorpS\Documents\GitHub\ImageGalleryWebProject\ImageGallery\ImageGallery.Client\obj\Debug\ImageGallery.Client.pdb

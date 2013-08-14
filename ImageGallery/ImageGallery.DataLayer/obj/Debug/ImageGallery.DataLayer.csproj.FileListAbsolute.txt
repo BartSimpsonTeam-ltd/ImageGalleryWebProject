@@ -38,3 +38,13 @@ C:\Users\krstan4o\Desktop\TeamProjectBarts\ImageGalleryWebProject\ImageGallery\I
 C:\Users\krstan4o\Desktop\TeamProjectBarts\ImageGalleryWebProject\ImageGallery\ImageGallery.DataLayer\obj\Debug\ImageGallery.DataLayer.csprojResolveAssemblyReference.cache
 C:\Users\krstan4o\Desktop\TeamProjectBarts\ImageGalleryWebProject\ImageGallery\ImageGallery.DataLayer\obj\Debug\ImageGallery.DataLayer.dll
 C:\Users\krstan4o\Desktop\TeamProjectBarts\ImageGalleryWebProject\ImageGallery\ImageGallery.DataLayer\obj\Debug\ImageGallery.DataLayer.pdb
+C:\Users\ScorpS\Documents\GitHub\ImageGalleryWebProject\ImageGallery\ImageGallery.DataLayer\bin\Debug\ImageGallery.DataLayer.dll.config
+C:\Users\ScorpS\Documents\GitHub\ImageGalleryWebProject\ImageGallery\ImageGallery.DataLayer\bin\Debug\ImageGallery.DataLayer.dll
+C:\Users\ScorpS\Documents\GitHub\ImageGalleryWebProject\ImageGallery\ImageGallery.DataLayer\bin\Debug\ImageGallery.DataLayer.pdb
+C:\Users\ScorpS\Documents\GitHub\ImageGalleryWebProject\ImageGallery\ImageGallery.DataLayer\bin\Debug\EntityFramework.dll
+C:\Users\ScorpS\Documents\GitHub\ImageGalleryWebProject\ImageGallery\ImageGallery.DataLayer\bin\Debug\ImageGallery.Models.dll
+C:\Users\ScorpS\Documents\GitHub\ImageGalleryWebProject\ImageGallery\ImageGallery.DataLayer\bin\Debug\ImageGallery.Models.pdb
+C:\Users\ScorpS\Documents\GitHub\ImageGalleryWebProject\ImageGallery\ImageGallery.DataLayer\bin\Debug\EntityFramework.xml
+C:\Users\ScorpS\Documents\GitHub\ImageGalleryWebProject\ImageGallery\ImageGallery.DataLayer\obj\Debug\ImageGallery.DataLayer.csprojResolveAssemblyReference.cache
+C:\Users\ScorpS\Documents\GitHub\ImageGalleryWebProject\ImageGallery\ImageGallery.DataLayer\obj\Debug\ImageGallery.DataLayer.dll
+C:\Users\ScorpS\Documents\GitHub\ImageGalleryWebProject\ImageGallery\ImageGallery.DataLayer\obj\Debug\ImageGallery.DataLayer.pdb
