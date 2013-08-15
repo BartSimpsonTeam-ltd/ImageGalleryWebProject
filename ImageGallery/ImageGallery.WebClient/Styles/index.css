@@ -25,37 +25,23 @@
             background-color: #ccc;
         }
 
-#users-container, #galleries-container, #content, #images-container, #albums-container {
+#users-container, #galleries-container, #content {
     zoom:1;
 }
-#users-container:after, #galleries-container:after, #content:after, #images-container:after, #albums-container:after {    
+#users-container:after, #galleries-container:after, #content:after {    
     display:block;
     content:"";
     clear:both;
 }
 
 #users-container {
-    border:3px solid #bbb;
-    border-radius:5px;
+    border:1px solid blue;
     width:30%;
     float:left;
-    height:700px;
-    overflow:auto;
 }
 
-#users-container ul{
-    width:100%;
-}
-#users-container ul li{
-    padding:10px 0;
-}
-#users-container ul a{
-    display:block;
-    width:100%;
-}
 #galleries-container {
-    border:3px solid #bbb;
-    border-radius:5px;
+    border:1px solid green;
     width:68%;
     float:right;
 }

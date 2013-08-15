@@ -17,6 +17,17 @@
 		return html;
 	}
 
+	//function GaleriesUI() {
+	//    return buildGalleriesList([{
+	//        id: 3,
+	//        title: "Clicked album"
+	//    },
+	//		{
+	//		    id: 2,
+	//		    title: "Second album"
+	//		}]);
+	//}
+
 	function buildGalleryUI(user) {
 	    var html = '<span id="user-nickname">' +
 				localStorage.getItem("nickname") +
@@ -36,35 +47,35 @@
 	}
 
 	function buildGalleriesList(galleries) {
-	    var list = '<div id="albums-container"><ul class="galleries-list" id="sortable-gallery">';
+	    var list = '<ul class="galleries-list">';
 	    for (var i = 0; i < galleries.length; i++) {
 	        var gallery = galleries[i];
 			list +=
-				'<li data-gallery-id="' + gallery.AlbumId + '" class="ui-state-default">' +
+				'<li data-gallery-id="' + gallery.AlbumId + '">' +
 						'<h3>' + $("<div />").html(gallery.Title).text() + '</h3>' +
 					'<a href="#" class="albums">' +
                         '<img src="images/folderColored.png" alt="Alternate Text" />' +
 					'</a>' +
 				'</li>';
 		}
-		list += "</ul></div>";
+		list += "</ul>";
 		return list;
 	}
 
 	function buildImagesList(images) {
-	    var list = '<div id="images-container"><ul class="images-list" id="sortable-image">';
+	    var list = '<ul class="images-list">';
 	    //console.log(images.length);
 	    for (var i = 0; i < images.length; i++) {
 	        var image = images[i];
 	        list +=
-				'<li data-image-id="' + image.ImageId + '"class="ui-state-default"> ' +
+				'<li data-image-id="' + image.ImageId + '">' +
 						'<h4>' + $("<div />").html(image.Title).text() + '</h4>' +
 					'<a href="#" class="image">' +
                         '<img src="images/photo.png" alt="Alternate Text" />' +
 					'</a>' +
 				'</li>';
 	    }
-	    list += "</ul></div>";
+	    list += "</ul>";
 	    return list;
 	}
 
@@ -82,11 +93,11 @@
 	}
 
 	function buildUsersList(users) {
-	    var list = '<ul class="users-list"  id="sortable">';
+		var list = '<ul class="users-list">';
 		for (var i = 0; i < users.length; i++) {
 			//var game = gamesList[i];
 			list +=
-				'<li data-user-id="' + users[i].UserId + '" class="ui-state-default">' +
+				'<li data-user-id="' + users[i].UserId + '">' +
 					'<a href="#" class="users">' + //users[i].username +
 						$("<div />").html(users[i].Username).text() +
 					'</a>' + 
@@ -94,6 +105,60 @@
 		}
 		list += "</ul>";
 		return list;
+	}
+
+	function buildField(field) {
+	    var tableHtml = '<table id="field" border="1" cellspacing="0" cellpadding="5">';
+
+		for (var i = 0; i < 9; i++) {
+		    tableHtml += '<tr>';
+		    for (var k = 0; k < 9; k++) {
+		        var hasUnit = false;
+		        for (var index = 0; index < field.red.units.length; index++) {
+		            var redUnit = field.red.units[index];
+		            if (redUnit.position.x == k && redUnit.position.y == i) {
+		                tableHtml += '<td class="red full ' + redUnit.mode + '" data-unit-id="' + redUnit.id +
+                            '" data-player-id="red" data-id-new-position="' + k + "" + i + '">'
+                            + redUnit.type;
+		                hasUnit = true;
+		            }
+		        }
+
+		        for (index = 0; index < field.blue.units.length; index++) {
+		            var blueUnit = field.blue.units[index];
+		            if (blueUnit.position.x == k && blueUnit.position.y == i) {
+		                tableHtml += '<td class="blue full ' + blueUnit.mode + '" data-unit-id="' + blueUnit.id +
+                            '" data-player-id="blue" data-id-new-position="' + k + "" + i + '">'
+                            + blueUnit.type;// + '<td>';
+		                hasUnit = true;
+		            }
+		        }
+
+		        if (!hasUnit) {
+		            tableHtml += '<td class="empty" data-id-new-position="' + k + "" + i + '">';
+		        }
+		    }
+		}
+		tableHtml += '</table>';
+		return tableHtml;
+	}
+
+	function buildGameState(gameState) {
+	    var turn = "";
+	    if(gameState.inTurn == "red") {
+	        turn = gameState.red.nickname;
+	    }
+	    else{
+	        turn = gameState.blue.nickname;
+	    }
+
+	    var html =
+			'<div id="game-state" data-game-id="' + gameState.gameId + '">' +
+				'<h2>' + gameState.title + '</h2>' +
+                '<h3 class="' + gameState.inTurn + '">'+ turn + ' is in turn</h3>' +
+                buildField(gameState) +
+		'</div>';
+		return html;
 	}
 
 	function buildMessagesBox(messages) {
@@ -111,11 +176,28 @@
 	    return html;
 	}
 
+	function buildScoreTable(data) {
+	    var html = '<h2>Scores</h2>' +
+            '<table id="score-table>"';
+
+	    for (var i = 0; i < data.length; i++) {
+	        html += '<tr>' +
+                '<td>' + data[i].nickname +
+                '<td>' + data[i].score;
+	    }
+
+	    return html;
+	}
+
 	return {
+	    //GaleriesUI:GaleriesUI,
 		GalleryUI: buildGalleryUI,
 		GaleriesUI: buildGalleriesList,
 		loginForm: buildLoginForm,
 		usersList: buildUsersList,
+		gameState: buildGameState,
+		messagesBox: buildMessagesBox,
+		score: buildScoreTable,
 		BuildImagesList: buildImagesList,
 		buildImageInfo: buildImageInfo
 	}

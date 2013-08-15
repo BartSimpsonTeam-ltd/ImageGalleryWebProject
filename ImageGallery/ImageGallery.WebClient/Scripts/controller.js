@@ -28,8 +28,6 @@ var controllers = (function () {
 		    this.persister.user.getUsers(function (user) {
 		        var list = ui.GalleryUI(user);
 		        $(selector).html(list);
-		        $("#sortable").sortable();
-		        $("#sortable").disableSelection();
 		    }, function () { alert("error, not found albums") });
 		},
 		loadGalleriesUI: function (userId, selector) {
@@ -42,8 +40,6 @@ var controllers = (function () {
 		        }
 
 		        $(selector).html(list);
-		        $("#sortable-gallery").sortable();
-		        $("#sortable-gallery").disableSelection();
 		    }, function () { alert("error, not found albums")});
 		},
 		loadAlbumsUI: function (albumId, selector, success) {
@@ -72,9 +68,6 @@ var controllers = (function () {
 		        //setTimeout(function () {
 		            console.log(list);
 		            $(selector).append($(list));
-
-		            $("#sortable-image").sortable();
-		            $("#sortable-image").disableSelection();
 		        //}, 1000);
 		      
 		    }, function () { alert("error, not found images") });
@@ -211,12 +204,4 @@ var controllers = (function () {
 $(function () {
 	var controller = controllers.get();
 	controller.loadUI("#content");
-    
-
-    //  //$(function() {
-    //      $( "#sortable" ).sortable();
-    //      $("#sortable").disableSelection();
-    //  //});
-
-	//$("#sortable").draggable("enable");
 });

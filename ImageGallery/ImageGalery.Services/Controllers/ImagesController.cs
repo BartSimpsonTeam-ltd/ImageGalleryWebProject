@@ -10,10 +10,7 @@ using System.Web;
 using System.Web.Http;
 using ImageGallery.Models;
 using ImageGallery.DataLayer;
-using ImageGallery.Models;
-using System.Threading.Tasks;
-using System.Diagnostics;
-using ImageGalery.Services.Persisters;
+
 namespace ImageGalery.Services.Controllers
 {
     public class ImagesController : ApiController
@@ -41,7 +38,6 @@ namespace ImageGalery.Services.Controllers
                                 Username = comment.User.Username
                             }).ToList();
             var image = db.Images.Find(id);
-
             if (image != null)
             {
                 var data = new
@@ -51,10 +47,8 @@ namespace ImageGalery.Services.Controllers
                     Comments = comments,
                     Url = image.Url
                 };
-
                 return Request.CreateResponse(HttpStatusCode.OK, data);
             }
-
             return Request.CreateResponse(HttpStatusCode.NotFound);
         }
 
@@ -86,47 +80,20 @@ namespace ImageGalery.Services.Controllers
         }
 
         // POST api/Images
-        // POST api/Images
-        public async Task<HttpResponseMessage> PostImage(string title, int userId, int albumId)
+        public HttpResponseMessage PostImage(Image image)
         {
-
-            if (!Request.Content.IsMimeMultipartContent())
+            if (ModelState.IsValid)
             {
-                throw new HttpResponseException(HttpStatusCode.UnsupportedMediaType);
+                db.Images.Add(image);
+                db.SaveChanges();
+
+                HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.Created, image);
+                response.Headers.Location = new Uri(Url.Link("DefaultApi", new { id = image.ImageId }));
+                return response;
             }
-
-            string root = HttpContext.Current.Server.MapPath("~/App_Data");
-            var provider = new MultipartFormDataStreamProvider(root);
-
-            try
+            else
             {
-                // Read the form data.
-                await Request.Content.ReadAsMultipartAsync(provider);
-
-
-
-                // This illustrates how to get the file names.
-                foreach (MultipartFileData file in provider.FileData)
-                {
-                    Trace.WriteLine(file.Headers.ContentDisposition.FileName);
-                    Trace.WriteLine("Server file path: " + file.LocalFileName);
-                    string fileName = file.LocalFileName;
-                    var url = DropBoxUploader.UploadProfilePicToDropBox(fileName, file.Headers.ContentDisposition.FileName);
-
-                    db.Images.Add(new Image
-                    {
-                        Title = title,
-                        Url = url,
-                        Album = db.Albums.FirstOrDefault(x => x.AlbumId == albumId)
-                    });
-                    db.SaveChanges();
-                    break;
-                }
-                return Request.CreateResponse(HttpStatusCode.OK);
-            }
-            catch (System.Exception e)
-            {
-                return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, e);
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
             }
         }
 

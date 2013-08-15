@@ -48,13 +48,3 @@ C:\Users\ScorpS\Documents\GitHub\ImageGalleryWebProject\ImageGallery\ImageGaller
 C:\Users\ScorpS\Documents\GitHub\ImageGalleryWebProject\ImageGallery\ImageGallery.DataLayer\obj\Debug\ImageGallery.DataLayer.csprojResolveAssemblyReference.cache
 C:\Users\ScorpS\Documents\GitHub\ImageGalleryWebProject\ImageGallery\ImageGallery.DataLayer\obj\Debug\ImageGallery.DataLayer.dll
 C:\Users\ScorpS\Documents\GitHub\ImageGalleryWebProject\ImageGallery\ImageGallery.DataLayer\obj\Debug\ImageGallery.DataLayer.pdb
-F:\ImageGalleryWebProject\ImageGallery\ImageGallery.DataLayer\bin\Debug\ImageGallery.DataLayer.dll.config
-F:\ImageGalleryWebProject\ImageGallery\ImageGallery.DataLayer\bin\Debug\ImageGallery.DataLayer.dll
-F:\ImageGalleryWebProject\ImageGallery\ImageGallery.DataLayer\bin\Debug\ImageGallery.DataLayer.pdb
-F:\ImageGalleryWebProject\ImageGallery\ImageGallery.DataLayer\bin\Debug\EntityFramework.dll
-F:\ImageGalleryWebProject\ImageGallery\ImageGallery.DataLayer\bin\Debug\ImageGallery.Models.dll
-F:\ImageGalleryWebProject\ImageGallery\ImageGallery.DataLayer\bin\Debug\ImageGallery.Models.pdb
-F:\ImageGalleryWebProject\ImageGallery\ImageGallery.DataLayer\bin\Debug\EntityFramework.xml
-F:\ImageGalleryWebProject\ImageGallery\ImageGallery.DataLayer\obj\Debug\ImageGallery.DataLayer.csprojResolveAssemblyReference.cache
-F:\ImageGalleryWebProject\ImageGallery\ImageGallery.DataLayer\obj\Debug\ImageGallery.DataLayer.dll
-F:\ImageGalleryWebProject\ImageGallery\ImageGallery.DataLayer\obj\Debug\ImageGallery.DataLayer.pdb
