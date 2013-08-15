@@ -44,33 +44,9 @@ namespace ImageGalery.Services.Controllers
             {
                 throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.NotFound));
             }
-            return Request.CreateResponse(HttpStatusCode.OK, albumsAndImagesInAlbum);            
+            return Request.CreateResponse(HttpStatusCode.OK, albumsAndImagesInAlbum);
+            
         }
-
-        //[HttpGet]
-        //public HttpResponseMessage GetImages(int id)
-        //{
-        //    // id = albumId
-        //    var albumsAndImagesInAlbum = db.Albums.Where(x => x.AlbumId == id).Select(y => new
-        //    {
-        //        Images = y.Images.Select(x => new
-        //        {
-        //            AlbumId = y.AlbumId,
-        //            ImageId = x.ImageId,
-        //            Title = x.Title,
-        //            Url = x.Url
-        //        }),
-        //        Albums = y.Albums
-
-        //    }).ToList();
-
-        //    if (albumsAndImagesInAlbum.Count == 0)
-        //    {
-        //        throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.NotFound));
-        //    }
-        //    return Request.CreateResponse(HttpStatusCode.OK, albumsAndImagesInAlbum);
-
-        //}
 
         // POST api/Albums
         [ActionName("create")]

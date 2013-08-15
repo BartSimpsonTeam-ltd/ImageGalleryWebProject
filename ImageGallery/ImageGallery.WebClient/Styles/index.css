@@ -25,23 +25,37 @@
             background-color: #ccc;
         }
 
-#users-container, #galleries-container, #content {
+#users-container, #galleries-container, #content, #images-container, #albums-container {
     zoom:1;
 }
-#users-container:after, #galleries-container:after, #content:after {    
+#users-container:after, #galleries-container:after, #content:after, #images-container:after, #albums-container:after {    
     display:block;
     content:"";
     clear:both;
 }
 
 #users-container {
-    border:1px solid blue;
+    border:3px solid #bbb;
+    border-radius:5px;
     width:30%;
     float:left;
+    height:700px;
+    overflow:auto;
 }
 
+#users-container ul{
+    width:100%;
+}
+#users-container ul li{
+    padding:10px 0;
+}
+#users-container ul a{
+    display:block;
+    width:100%;
+}
 #galleries-container {
-    border:1px solid green;
+    border:3px solid #bbb;
+    border-radius:5px;
     width:68%;
     float:right;
 }
