@@ -1,0 +1,20 @@
+C:\Users\ScorpS\Documents\GitHub\ImageGalleryWebProject\ImageGallery\ImageGallery.WebClient\bin\ImageGallery.WebClient.dll
+C:\Users\ScorpS\Documents\GitHub\ImageGalleryWebProject\ImageGallery\ImageGallery.WebClient\bin\ImageGallery.WebClient.pdb
+C:\Users\ScorpS\Documents\GitHub\ImageGalleryWebProject\ImageGallery\ImageGallery.WebClient\obj\Debug\ImageGallery.WebClient.csprojResolveAssemblyReference.cache
+C:\Users\ScorpS\Documents\GitHub\ImageGalleryWebProject\ImageGallery\ImageGallery.WebClient\obj\Debug\ImageGallery.WebClient.dll
+C:\Users\ScorpS\Documents\GitHub\ImageGalleryWebProject\ImageGallery\ImageGallery.WebClient\obj\Debug\ImageGallery.WebClient.pdb
+C:\Users\ScorpS\Desktop\ImageGalleryWebProject\ImageGallery\ImageGallery.WebClient\bin\ImageGallery.WebClient.dll
+C:\Users\ScorpS\Desktop\ImageGalleryWebProject\ImageGallery\ImageGallery.WebClient\bin\ImageGallery.WebClient.pdb
+C:\Users\ScorpS\Desktop\ImageGalleryWebProject\ImageGallery\ImageGallery.WebClient\obj\Debug\ImageGallery.WebClient.csprojResolveAssemblyReference.cache
+C:\Users\ScorpS\Desktop\ImageGalleryWebProject\ImageGallery\ImageGallery.WebClient\obj\Debug\ImageGallery.WebClient.dll
+C:\Users\ScorpS\Desktop\ImageGalleryWebProject\ImageGallery\ImageGallery.WebClient\obj\Debug\ImageGallery.WebClient.pdb
+C:\Users\ScorpS\Documents\Visual Studio 2012\Projects\WebClient-Gallery\ImageGallery.WebClient\bin\ImageGallery.WebClient.dll
+C:\Users\ScorpS\Documents\Visual Studio 2012\Projects\WebClient-Gallery\ImageGallery.WebClient\bin\ImageGallery.WebClient.pdb
+C:\Users\ScorpS\Documents\Visual Studio 2012\Projects\WebClient-Gallery\ImageGallery.WebClient\obj\Debug\ImageGallery.WebClient.csprojResolveAssemblyReference.cache
+C:\Users\ScorpS\Documents\Visual Studio 2012\Projects\WebClient-Gallery\ImageGallery.WebClient\obj\Debug\ImageGallery.WebClient.dll
+C:\Users\ScorpS\Documents\Visual Studio 2012\Projects\WebClient-Gallery\ImageGallery.WebClient\obj\Debug\ImageGallery.WebClient.pdb
+C:\Users\krstan4o\Desktop\FullProjectBilded\ImageGallery.WebClient\bin\ImageGallery.WebClient.dll
+C:\Users\krstan4o\Desktop\FullProjectBilded\ImageGallery.WebClient\bin\ImageGallery.WebClient.pdb
+C:\Users\krstan4o\Desktop\FullProjectBilded\ImageGallery.WebClient\obj\Debug\ImageGallery.WebClient.csprojResolveAssemblyReference.cache
+C:\Users\krstan4o\Desktop\FullProjectBilded\ImageGallery.WebClient\obj\Debug\ImageGallery.WebClient.dll
+C:\Users\krstan4o\Desktop\FullProjectBilded\ImageGallery.WebClient\obj\Debug\ImageGallery.WebClient.pdb
