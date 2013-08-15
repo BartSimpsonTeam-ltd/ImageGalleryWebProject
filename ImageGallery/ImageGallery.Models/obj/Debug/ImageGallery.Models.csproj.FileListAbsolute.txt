@@ -1,0 +1,6 @@
+F:\ImageGalleryWebProject\ImageGallery\ImageGallery.Models\bin\Debug\ImageGallery.Models.dll.config
+F:\ImageGalleryWebProject\ImageGallery\ImageGallery.Models\bin\Debug\ImageGallery.Models.dll
+F:\ImageGalleryWebProject\ImageGallery\ImageGallery.Models\bin\Debug\ImageGallery.Models.pdb
+F:\ImageGalleryWebProject\ImageGallery\ImageGallery.Models\obj\Debug\ImageGallery.Models.csprojResolveAssemblyReference.cache
+F:\ImageGalleryWebProject\ImageGallery\ImageGallery.Models\obj\Debug\ImageGallery.Models.dll
+F:\ImageGalleryWebProject\ImageGallery\ImageGallery.Models\obj\Debug\ImageGallery.Models.pdb
