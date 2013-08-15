@@ -28,16 +28,28 @@ namespace ImageGalery.Services.Controllers
             return db.Images.AsEnumerable();
         }
 
-        // GET api/Images/5
-        public Image GetImage(int id)
+        public HttpResponseMessage GetImage(int id)
         {
-            Image image = db.Images.Find(id);
-            if (image == null)
+            var comments = (from comment in db.Comments
+                            where (comment.Image.ImageId == id)
+                            select new
+                            {
+                                Content = comment.Content,
+                                Username = comment.User.Username
+                            }).ToList();
+            var image = db.Images.Find(id);
+            if (image != null)
             {
-                throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.NotFound));
+                var data = new
+                {
+                    ImageId = image.ImageId,
+                    Title = image.Title,
+                    Comments = comments,
+                    Url = image.Url
+                };
+                return Request.CreateResponse(HttpStatusCode.OK, data);
             }
-
-            return image;
+            return Request.CreateResponse(HttpStatusCode.NotFound);
         }
 
         // PUT api/Images/5

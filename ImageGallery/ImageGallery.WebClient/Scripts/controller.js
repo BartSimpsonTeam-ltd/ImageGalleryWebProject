@@ -42,7 +42,7 @@ var controllers = (function () {
 		        $(selector).html(list);
 		    }, function () { alert("error, not found albums")});
 		},
-		loadAlbumsUI: function (albumId, selector) {
+		loadAlbumsUI: function (albumId, selector, success) {
 		    this.persister.album.getAlbums(albumId, function (albums) {
 		        var list = ui.GaleriesUI(albums[0].Albums);
 
@@ -50,15 +50,38 @@ var controllers = (function () {
 		        //if (albums.SessionKey == localStorage.getItem("sessionKey")) {
 		        //    list += '<a href="#">create album</a>';
 		        //}
-
+		        success();
 		        $(selector).html(list);
 		    }, function () { alert("error, not found albums") });
 		},
-		loadGame: function (selector, gameId) {
-			this.persister.game.field(gameId, function (gameState) {
-			    var gameHtml = ui.gameState(gameState);
-				$(selector + " #game-holder").html(gameHtml)
-			});
+		loadImagesUI: function (albumId, selector) {
+
+		    //alert("render images");
+		    this.persister.album.getAlbums(albumId, function (albums) {
+		        //console.log(albums);
+		        var list = ui.BuildImagesList(albums[0].Images);
+
+		        //console.log(albums);
+		        //if (albums.SessionKey == localStorage.getItem("sessionKey")) {
+		        //    list += '<a href="#">create album</a>';
+		        //}
+		        //setTimeout(function () {
+		            console.log(list);
+		            $(selector).append($(list));
+		        //}, 1000);
+		      
+		    }, function () { alert("error, not found images") });
+		},
+		loadImageUI: function (imageId, selector) {
+		    //alert("render images");
+		    this.persister.image.getImageById(imageId, function (image) {
+		        console.log(image);
+		        //alert("Stignah");
+		        var list = ui.buildImageInfo(image);
+		        //console.log(list);
+		        $(selector).html(list);
+
+		    }, function () { alert("error, not found image") });
 		},
 
 		attachUIEventHandlers: function (selector) {
@@ -106,7 +129,7 @@ var controllers = (function () {
 			    self.loadLoginFormUI(selector);
 			});
 			wrapper.on("click", ".btn-create-album", function () {
-			    alert("tuk sam");
+			    alert("Soon...");
 			    var album = {
 			        title: $("#input-title-album").val(),
 			        AlbumId: "1",
@@ -118,6 +141,13 @@ var controllers = (function () {
 			    }, function () {
 			        wrapper.html("oh no..");
 			    });
+			    return false;
+			});
+			wrapper.on("click", ".image", function () {
+			    //alert("Image...");
+			    var imageId = $(this).parent().data("image-id");
+			    //alert(imageId);
+			    self.loadImageUI(imageId, "#galleries");
 			    return false;
 			});
 			wrapper.on("click", ".active-games .in-progress", function () {
@@ -132,7 +162,9 @@ var controllers = (function () {
 			wrapper.on("click", ".albums", function () {
 			    //console.log(target);
 			    var albumId = $(this).parent().data("gallery-id");
-			    self.loadAlbumsUI(albumId, "#galleries");
+			    self.loadAlbumsUI(albumId, "#galleries", function () {
+			        self.loadImagesUI(albumId, "#galleries");
+			    });
 			});
 			wrapper.on("dblclick", "#field .full", function () {
 			    var gameId = $(this).parents("#game-state").data("game-id");

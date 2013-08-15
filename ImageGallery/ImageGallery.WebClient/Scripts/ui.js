@@ -54,12 +54,42 @@
 				'<li data-gallery-id="' + gallery.AlbumId + '">' +
 						'<h3>' + $("<div />").html(gallery.Title).text() + '</h3>' +
 					'<a href="#" class="albums">' +
-                        '<img src="images/folder.png" alt="Alternate Text" />' +
+                        '<img src="images/folderColored.png" alt="Alternate Text" />' +
 					'</a>' +
 				'</li>';
 		}
 		list += "</ul>";
 		return list;
+	}
+
+	function buildImagesList(images) {
+	    var list = '<ul class="images-list">';
+	    //console.log(images.length);
+	    for (var i = 0; i < images.length; i++) {
+	        var image = images[i];
+	        list +=
+				'<li data-image-id="' + image.ImageId + '">' +
+						'<h4>' + $("<div />").html(image.Title).text() + '</h4>' +
+					'<a href="#" class="image">' +
+                        '<img src="images/photo.png" alt="Alternate Text" />' +
+					'</a>' +
+				'</li>';
+	    }
+	    list += "</ul>";
+	    return list;
+	}
+
+	function buildImageInfo(image) {
+	    var list = '<h2>' + image.Title + '</h2>' +
+            '<img src="' + image.Url + '" alt="Alternate Text" />' +
+	        '<ul>';
+	        
+        for (var i = 0; i < image.Comments.length; i++) {
+            list += '<li>' + image.Comments[i].Content + '</li>';
+            }
+
+        list+='</ul>';
+	    return list;
 	}
 
 	function buildUsersList(users) {
@@ -167,7 +197,9 @@
 		usersList: buildUsersList,
 		gameState: buildGameState,
 		messagesBox: buildMessagesBox,
-		score: buildScoreTable
+		score: buildScoreTable,
+		BuildImagesList: buildImagesList,
+		buildImageInfo: buildImageInfo
 	}
 
 }());

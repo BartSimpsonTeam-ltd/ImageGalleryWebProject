@@ -96,14 +96,18 @@ var persisters = (function () {
 		getAlbums: function (albumId, success, error) {
 			var url = this.rootUrl + "getalbums/" + albumId;
 			httpRequester.getJSON(url, success, error);
-		}
+		},
+		//getImages: function (albumId, success, error) {
+		//    var url = this.rootUrl + "getimages" + albumId;
+		//    httpRequester.getJSON(url, success, error);
+		//}
 	});
 	var ImagePersister = Class.create({
 		init: function (url) {
 		    this.rootUrl = url + "images/";
 		},
 		getImageById: function (imgId, success, error) {
-		    var url = this.rootUrl + imgId;
+		    var url = this.rootUrl + "getimage/" + imgId;
 		    httpRequester.getJSON(url, success, error);
 		}
 	});
