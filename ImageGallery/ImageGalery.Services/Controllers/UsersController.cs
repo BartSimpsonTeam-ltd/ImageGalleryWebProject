@@ -16,6 +16,10 @@ namespace ImageGalery.Services.Controllers
 {
     public class UsersController : ApiController
     {
+        public UsersController()
+        {
+            db.Configuration.ProxyCreationEnabled = false;
+        } 
         private ImageGalleryContext db = new ImageGalleryContext();
 
         // GET api/Users
@@ -25,7 +29,8 @@ namespace ImageGalery.Services.Controllers
                         select new
                         {
                             UserId = users.UserId,
-                            Username = users.Username
+                            Username = users.Username,
+                            SessionKey = users.SessionKey
                         }).ToList();
 
             return Request.CreateResponse(HttpStatusCode.OK, data);
@@ -50,7 +55,8 @@ namespace ImageGalery.Services.Controllers
                             {
                                 UserId = user.UserId,
                                 Username = user.Username,
-                                Galleries = galleries
+                                Galleries = galleries,
+                                SessionKey = user.SessionKey
                             };
 
                 return Request.CreateResponse(HttpStatusCode.OK, data);

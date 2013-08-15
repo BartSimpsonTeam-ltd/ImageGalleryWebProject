@@ -20,13 +20,10 @@ namespace ImageGalery.Services.Controllers
         public AlbumsController()
         {
             db.Configuration.ProxyCreationEnabled = false;
-        }
-
-      
+        }      
 
         // GET api/Albums/5
         [HttpGet]
-        [ActionName("Albums")]
         public HttpResponseMessage GetAlbums(int id)
         {
             // id = albumId
@@ -37,8 +34,7 @@ namespace ImageGalery.Services.Controllers
                     AlbumId = y.AlbumId,
                     ImageId = x.ImageId,
                     Title = x.Title,
-                    Url=x.Url,
-                   
+                    Url=x.Url               
                 }),
                 Albums = y.Albums
 
@@ -52,31 +48,8 @@ namespace ImageGalery.Services.Controllers
             
         }
 
-        // PUT api/Albums/5
-        public HttpResponseMessage PutAlbum(int id, Album album)
-        {
-            if (ModelState.IsValid && id == album.AlbumId)
-            {
-                db.Entry(album).State = EntityState.Modified;
-
-                try
-                {
-                    db.SaveChanges();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    return Request.CreateResponse(HttpStatusCode.NotFound);
-                }
-
-                return Request.CreateResponse(HttpStatusCode.OK);
-            }
-            else
-            {
-                return Request.CreateResponse(HttpStatusCode.BadRequest);
-            }
-        }
-
         // POST api/Albums
+        [ActionName("create")]
         public HttpResponseMessage PostAlbum(Album album)
         {
             if (ModelState.IsValid)
@@ -92,29 +65,6 @@ namespace ImageGalery.Services.Controllers
             {
                 return Request.CreateResponse(HttpStatusCode.BadRequest);
             }
-        }
-
-        // DELETE api/Albums/5
-        public HttpResponseMessage DeleteAlbum(int id)
-        {
-            Album album = db.Albums.Find(id);
-            if (album == null)
-            {
-                return Request.CreateResponse(HttpStatusCode.NotFound);
-            }
-
-            db.Albums.Remove(album);
-
-            try
-            {
-                db.SaveChanges();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                return Request.CreateResponse(HttpStatusCode.NotFound);
-            }
-
-            return Request.CreateResponse(HttpStatusCode.OK, album);
         }
 
         protected override void Dispose(bool disposing)

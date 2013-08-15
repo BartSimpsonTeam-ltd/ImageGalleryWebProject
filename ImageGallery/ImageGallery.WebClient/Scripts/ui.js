@@ -53,7 +53,7 @@
 			list +=
 				'<li data-gallery-id="' + gallery.AlbumId + '">' +
 						'<h3>' + $("<div />").html(gallery.Title).text() + '</h3>' +
-					'<a href="#" class="">' +
+					'<a href="#" class="albums">' +
                         '<img src="images/folder.png" alt="Alternate Text" />' +
 					'</a>' +
 				'</li>';
@@ -167,7 +167,7 @@
 		usersList: buildUsersList,
 		gameState: buildGameState,
 		messagesBox: buildMessagesBox,
-        score: buildScoreTable
+		score: buildScoreTable
 	}
 
 }());

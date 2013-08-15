@@ -87,14 +87,14 @@ var persisters = (function () {
 			this.rootUrl = url + "albums/";
 		},
 		create: function (album, success, error) {
-			var albumData = {
-			    title: album.title,
-			};
-			var url = this.rootUrl + "create/" + sessionKey;
-			httpRequester.postJSON(url, albumData, success, error);
+			//var albumData = {
+			//    title: album.title,
+			//};
+			var url = this.rootUrl + "create/";
+			httpRequester.postJSON(url, album, success, error);
 		},
-		getAlbums: function (album, success, error) {
-			var url = this.rootUrl + album.id;
+		getAlbums: function (albumId, success, error) {
+			var url = this.rootUrl + "getalbums/" + albumId;
 			httpRequester.getJSON(url, success, error);
 		}
 	});
